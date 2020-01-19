@@ -95,12 +95,12 @@ calendartime_plot <- function(df,aggregation_type, threshold=0){
     title <- "Number of days per year for which the daily average concentration exceeds a given threshold"
   }
   group <- df2$station_name
-  plot<-ggplot(data=df2, aes(x=x,y=y, group=group))+
-    geom_line(colour=group)
+  plot<-ggplot(data=df2, aes(x=x,y=y, group=group, colour=group))+
+    geom_line()+
     xlab(x_lab)+
     ylab(y_lab)+
     ggtitle(label=title)
-  return (plot)
+  return (list(df2,plot))
 }
 scatter_plot <- function(date_type, df, aggregation_type, threshold=0, x_label){
   if (aggregation_type == "Daily Averages"){
@@ -133,10 +133,10 @@ scatter_plot <- function(date_type, df, aggregation_type, threshold=0, x_label){
   }
   group<-df2$station_name
   
-  ggplot(df2, aes(x=x, y=y, group=group, color=group))+geom_point(alpha = 0.2,)+
-    
-    ylab(aggregation_type)+
-    ggtitle(label=title)
+  plot <- ggplot(df2, aes(x=x, y=y, group=group, color=group))+geom_point(alpha = 0.35,)+
+    xlab(x_label)+ylab(aggregation_type)+ggtitle(label=title)
+  
+  return (list(df2,plot))
 }
 
 
@@ -145,9 +145,10 @@ scatter_plot <- function(date_type, df, aggregation_type, threshold=0, x_label){
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
-
-    # Application title
-    titlePanel("Air Quality of Czech Republic from 2013 - 2019"),
+  #shinythemes::themeSelector(),
+  
+  titlePanel("Air Quality of Czech Republic from 2013 - 2019"),
+    
     
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
@@ -178,24 +179,26 @@ ui <- fluidPage(
             
 
         ),
-    
-        
-
 
         # Show a plot of the generated distribution
         mainPanel(
-          fluidRow(
-            h3("Stations Location"),
-            leafletOutput("czechmap"),
-            h3("Visualisation"),
-            plotOutput("plot_result")
-            
-            
-          ),
-           
+          tabsetPanel(
+            tabPanel("Stations Selection",
+                     h3("Stations Location"),
+                     leafletOutput("czechmap")
+                     ),
+            tabPanel("Explore Data",
+                     fluidRow(
+                       h3("Visualisation"),
+                       plotOutput("plot_result"),
+                       h3("Data Table"),
+                       DT::dataTableOutput('plot_datatable'),
+                       )
+                     )
+            )
+          )
         )
-    )
-)
+  )
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
@@ -226,7 +229,6 @@ server <- function(input, output) {
     }
     map
   })
-  
   
   
   ### query data based on pollutant+station code.csv 
@@ -284,14 +286,14 @@ server <- function(input, output) {
   })
   
   ### return plot when visualise data button is run
-  apply_plot <-eventReactive(input$viz_data, {
+  output_generator <-eventReactive(input$viz_data, {
 
     if (input$timeline_x_axis == "Calendar Time"){
+      ## plot line graph for Calendar time
       if(is.null(input$threshold)==TRUE){
         plot_result <- calendartime_plot(pollutant_df(), input$aggregation_type)
       }
       else{
-        
         plot_result <- calendartime_plot(pollutant_df(), input$aggregation_type, input$threshold)
         }
     }
@@ -310,13 +312,26 @@ server <- function(input, output) {
     plot_result
   })
   
-  ## plots rendering
-  output$plot_result <-renderPlot({
-    apply_plot()
+  df_display <- reactive({
+    datadisplay <-as.matrix((output_generator())[[1]])
+    datadisplay
+    
   })
   
-
-
+  output$plot_datatable <- DT::renderDataTable(
+   
+    DT::datatable(df_display(), options = list(pageLength = 10))
+    
+    
+  )
+  
+  ## plots rendering
+  output$plot_result <-renderPlot({
+    (output_generator())[2]  ## call the 2nd value return from plot functions
+  })
+  
+ 
+  
 }
 
 # Run the application 
