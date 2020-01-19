@@ -1,0 +1,133 @@
+EoICode,StationType,StationArea,CountryOrTerritory,Network,Latitude,Longitude,StationName
+CZ0UTPM,Background,Urban,Czechia,National automated monitoring network (SIS),50.64527893066406,13.85124969482422,Teplice
+CZ0UULD,Traffic,Urban,Czechia,National automated monitoring network (SIS),50.68312454223633,13.997873306274414,Usti n.L.-Vseboricka
+CZ0HVEL,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),50.35421371459961,15.83853530883789,Velichovky
+CZ0SKLS,Background,Urban,Czechia,National automated monitoring network (SIS),50.16741180419922,14.10604763031006,Kladno-Svermov
+CZ0TOZR,Background,Urban,Czechia,National automated monitoring network (SIS),49.79603958129883,18.247180938720703,Ostrava-Zabreh
+CZ0MOLJ,Background,Urban,Czechia,National automated monitoring network (SIS),49.601463317871094,17.238073348999027,Olomouc-Hejcin
+CZ0APRU,Traffic,Urban,Czechia,National automated monitoring network (SIS),50.06229782104492,14.537819862365724,Praha 10-Prumyslova
+CZ0PPLE,Traffic,Urban,Czechia,National automated monitoring network (SIS),49.74732971191406,13.381038665771484,Plzen-stred
+CZ0HHKT,Background,Urban,Czechia,National automated monitoring network (SIS),50.21853256225586,15.857006072998047,Hr.Kral.-tr.SNP
+CZ0AREP,Background,Urban,Czechia,National automated monitoring network (SIS),50.08806610107422,14.429220199584961,Praha 1-n. Republiky
+CZ0UULK,Background,Suburban,Czechia,National automated monitoring network (SIS),50.68352508544922,14.041194915771484,Usti n.L.-Kockov
+CZ0UDOK,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),50.45885467529297,14.170162200927734,Doksany
+CZ0CTAB,Traffic,Urban,Czechia,National automated monitoring network (SIS),49.4112319946289,14.67638874053955,Tabor
+CZ0BZNO,Background,Suburban,Czechia,National automated monitoring network (SIS),48.84295654296875,16.060127258300778,Znojmo
+CZ0TVER,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),49.92467880249024,18.42287254333496,Vernovice
+CZ0BMIS,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),48.79176712036133,16.724496841430664,Mikulov-Sedlec
+CZ0PPLL,Background,Urban,Czechia,National automated monitoring network (SIS),49.77012634277344,13.368221282958984,Plzen-Lochotin
+CZ0MJES,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),50.24224090576172,17.190179824829098,Jesenik-lazne
+CZ0TBKR,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),49.50260925292969,18.53856086730957,Bily Kriz
+CZ0BKUC,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),48.88135528564453,16.085817337036133,Kucharovice
+CZ0TNUJ,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),49.59419250488281,18.74396514892578,Navsi u Jablunkova
+CZ0PPLS,Background,Suburban,Czechia,National automated monitoring network (SIS),49.74599075317383,13.320748329162598,Plzen-Skvrnany
+CZ0TTRK,Background,Suburban,Czechia,National automated monitoring network (SIS),49.67237854003906,18.643037796020508,Trinec-Kanada
+CZ0BBNY,Background,Suburban,Czechia,National automated monitoring network (SIS),49.14897155761719,16.696216583251953,Brno-Turany
+CZ0ASMI,Traffic,Urban,Czechia,National automated monitoring network (SIS),50.07313537597656,14.398140907287598,Praha 5-Smichov
+CZ0CCHU,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),49.06843566894531,13.614801406860352,Churanov
+CZ0TORV,Background,Urban,Czechia,National automated monitoring network (SIS),49.87565994262695,18.43360710144043,Orlova
+CZ0PPLA,Traffic,Urban,Czechia,National automated monitoring network (SIS),49.73244857788086,13.402280807495115,Plzen-Slovany
+CZ0TSTD,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),49.7209358215332,18.089305877685547,Studenka
+CZ0ESVR,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),49.735084533691406,16.034196853637695,Svratouch
+CZ0KPRB,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),50.37247848510742,12.61538028717041,Prebuz
+CZ0ZUHR,Traffic,Urban,Czechia,National automated monitoring network (SIS),49.06795120239258,17.466848373413086,Uherske Hradiste
+CZ0UULM,Background,Urban,Czechia,National automated monitoring network (SIS),50.661094665527344,14.043063163757324,Usti n.L.-mesto
+CZ0BBNV,Traffic,Urban,Czechia,National automated monitoring network (SIS),49.19808959960938,16.593643188476562,Brno-Uvoz
+CZ0TOVK,Background,Urban,Czechia,National automated monitoring network (SIS),49.94498825073242,17.909530639648438,Opava-Katerinky
+CZ0UTUS,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),50.3765869140625,13.327622413635256,Tusimice
+CZ0TCTN,Background,Urban,Czechia,National automated monitoring network (SIS),49.74895858764648,18.60972595214844,Cesky Tesin
+CZ0TOPO,Background,Suburban,Czechia,National automated monitoring network (SIS),49.8252944946289,18.15927505493164,Ostrava-Poruba/CHMU
+CZ0ALIB,Background,Suburban,Czechia,National automated monitoring network (SIS),50.00730514526367,14.44593334197998,Praha 4-Libus
+CZ0SMBO,Background,Urban,Czechia,National automated monitoring network (SIS),50.42864608764648,14.913859367370605,Mlada Boleslav
+CZ0JJIH,Background,Urban,Czechia,National automated monitoring network (SIS),49.40159606933594,15.61024570465088,Jihlava
+CZ0EMTP,Background,Urban,Czechia,National automated monitoring network (SIS),49.758995056152344,16.66672134399414,Moravska Trebova - Piaristicka.
+CZ0UCEC,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),50.30349349975586,13.493802070617676,Ceradice
+CZ0LLIL,Background,Urban,Czechia,National automated monitoring network (SIS),50.75510025024414,15.069967269897461,Liberec Rochlice
+CZ0BBDN,Background,Urban,Czechia,National automated monitoring network (SIS),49.20272445678711,16.616287231445312,Brno - Detska nemocnice
+CZ0CCBD,Background,Urban,Czechia,National automated monitoring network (SIS),48.9843864440918,14.465683937072756,Ceske Budejovice
+CZ0CPRA,Background,Suburban,Czechia,National automated monitoring network (SIS),49.01608657836914,14.000444412231445,Prachatice
+CZ0HHKB,Traffic,Urban,Czechia,National automated monitoring network (SIS),50.19536209106445,15.846376419067385,Hradec Kralove-Brnen
+CZ0ZTNV,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),49.25939178466797,17.410560607910153,Tesnovice
+CZ0UMOM,Background,Urban,Czechia,National automated monitoring network (SIS),50.5103645324707,13.645272254943848,Most
+CZ0EPAO,Background,Suburban,Czechia,National automated monitoring network (SIS),50.042198181152344,15.73941421508789,Pardubice-Rosice
+CZ0ARIE,Background,Urban,Czechia,National automated monitoring network (SIS),50.08148193359375,14.442691802978516,Praha 2-Riegrovy sady
+CZ0SPBR,Background,Urban,Czechia,National automated monitoring network (SIS),49.67631530761719,13.991222381591795,Pribram-Brezové Hory
+CZ0TPIS,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),49.57362365722656,18.784900665283203,Pisecna
+CZ0JKOS,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),49.57339477539063,15.080278396606445,Kosetice
+CZ0TBRS,Background,Urban,Czechia,National automated monitoring network (SIS),49.98747634887695,17.469480514526367,Bruntal-school
+CZ0MBEL,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),49.58708190917969,17.80422019958496,Belotin
+CZ0TSUD,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),50.02976608276367,18.07707405090332,Sudice
+CZ0THAT,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),49.93981552124024,18.276649475097656,Hat
+CZ0TTRO,Background,Urban,Czechia,National automated monitoring network (SIS),49.6681137084961,18.67779922485352,Trinec-Kosmos
+CZ0MLOS,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),49.74791717529297,16.925777435302734,Lostice
+CZ0TVRZ,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),49.62231063842773,17.860952377319336,Vrazne
+CZ0SKLM,Background,Urban,Czechia,National automated monitoring network (SIS),50.14385986328125,14.101783752441404,Kladno-stred mesta
+CZ0ZVMZ,Background,Urban,Czechia,National automated monitoring network (SIS),49.4720573425293,17.966976165771484,Valasske Mezirici
+CZ0SBER,Traffic,Urban,Czechia,National automated monitoring network (SIS),49.95792770385742,14.058300018310547,Beroun
+CZ0TOPR,Industrial,Urban,Czechia,National automated monitoring network (SIS),49.85625839233398,18.26974105834961,Ostrava-Privoz
+CZ0BBNF,Traffic,Urban,Czechia,National automated monitoring network (SIS),49.21647262573242,16.567760467529293,Brno-Kroftova
+CZ0ASUC,Background,Suburban,Czechia,National automated monitoring network (SIS),50.12652969360352,14.384638786315918,Praha 6-Suchdol
+CZ0AKOB,Background,Suburban,Czechia,National automated monitoring network (SIS),50.12218856811523,14.467577934265135,Praha 8-Kobylisy
+CZ0KSOM,Background,Suburban,Czechia,National automated monitoring network (SIS),50.17282485961914,12.672818183898926,Sokolov
+CZ0TCER,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),49.77714157104492,17.541946411132812,Cervena hora
+CZ0ULOM,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),50.58576583862305,13.673418045043945,Lom
+CZ0LSOU,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),50.78964614868164,15.319683074951172,Sous
+CZ0AVYN,Traffic,Urban,Czechia,National automated monitoring network (SIS),50.11108016967773,14.503095626831055,Praha 9-Vysocany
+CZ0LJIZ,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),50.81995391845703,15.34448528289795,Jizerka
+CZ0ULTT,Background,Urban,Czechia,National automated monitoring network (SIS),50.54089736938477,14.11940860748291,Litomerice
+CZ0UMED,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),50.427589416503906,13.13014316558838,Medenec
+CZ0PPLV,Background,Suburban,Czechia,National automated monitoring network (SIS),49.76861572265625,13.423380851745605,Plzen-Doubravka
+CZ0URVH,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),50.579833984375,13.419506072998047,Rudolice v Horach
+CZ0MPRR,Background,Urban,Czechia,National automated monitoring network (SIS),49.45165634155274,17.454158782958984,Prerov
+CZ0THAR,Background,Urban,Czechia,National automated monitoring network (SIS),49.790977478027344,18.406835556030273,Havirov
+CZ0USNZ,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),50.78944396972656,14.086798667907715,Sneznik
+CZ0TOFF,Background,Urban,Czechia,National automated monitoring network (SIS),49.83918762207031,18.26368904113769,Ostrava-Fifejdy
+CZ0PPLB,Background,Urban,Czechia,National automated monitoring network (SIS),49.7283935546875,13.375539779663086,Plzen-Bory
+CZ0BLOC,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),49.068748474121094,17.07072639465332,Lovcice
+CZ0SPRI,Traffic,Urban,Czechia,National automated monitoring network (SIS),49.68494415283203,14.007740020751953,Pribram
+CZ0AKAL,Traffic,Urban,Czechia,National automated monitoring network (SIS),50.09423828125,14.442049026489258,Praha 8-Karlin
+CZ0BBNI,Background,Urban,Czechia,National automated monitoring network (SIS),49.21321105957031,16.678024291992188,Brno-Lisen
+CZ0TFMI,Background,Suburban,Czechia,National automated monitoring network (SIS),49.671791076660156,18.351070404052734,Frydek-Mistek
+CZ0UCHM,Background,Urban,Czechia,National automated monitoring network (SIS),50.467529296875,13.41269588470459,Chomutov
+CZ0UDCM,Background,Urban,Czechia,National automated monitoring network (SIS),50.77415084838867,14.218793869018555,Decin
+CZ0ALEG,Traffic,Urban,Czechia,National automated monitoring network (SIS),50.0723876953125,14.430672645568848,Praha 2-Legerova
+CZ0ZZLN,Background,Suburban,Czechia,National automated monitoring network (SIS),49.23290634155274,17.66717529296875,Zlin
+CZ0CVOD,Background,Suburban,Czechia,National automated monitoring network (SIS),49.14667129516602,14.171667098999025,Vodnany
+CZ0ZVSH,Background,Suburban,Czechia,National automated monitoring network (SIS),49.34444808959961,17.99601173400879,Vsetin - hvezdarna
+CZ0ASTO,Background,Urban,Czechia,National automated monitoring network (SIS),50.0461311340332,14.331413269042967,Praha 5-Stodulky
+CZ0SKUH,Background,Suburban,Czechia,National automated monitoring network (SIS),49.96129989624024,15.273127555847168,Kutna Hora
+CZ0HJIC,Background,Urban,Czechia,National automated monitoring network (SIS),50.43949890136719,15.352641105651855,Jicin
+CZ0PKUJ,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),49.72200012207031,13.618537902832033,Kamenny Ujezd
+CZ0CHVO,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),48.72419738769531,14.723381996154785,Hojna Voda
+CZ0ABRE,Background,Urban,Czechia,National automated monitoring network (SIS),50.08438491821289,14.38011646270752,Praha 6-Brevnov
+CZ0TOCB,Traffic,Urban,Czechia,National automated monitoring network (SIS),49.83984756469727,18.28997611999512,Ostrava-Ceskobratrsk
+CZ0LFRT,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),50.940650939941406,15.069816589355467,Frydlant
+CZ0SROR,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),50.30198287963867,15.178302764892578,Rozdalovice-Ruska
+CZ0KCHM,Background,Suburban,Czechia,National automated monitoring network (SIS),50.06586074829102,12.363442420959473,Cheb
+CZ0TOSG,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),49.55229568481445,18.36111068725586,Ostravice-golf
+CZ0LTAS,Background,Urban,Czechia,National automated monitoring network (SIS),50.73846435546875,15.302906036376953,Tanvald-skolka
+CZ0TCEL,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),49.5592155456543,18.34835433959961,Celadna
+CZ0EPAU,Background,Urban,Czechia,National automated monitoring network (SIS),50.0240364074707,15.763548851013185,Pardubice Dukla
+CZ0BVYS,Background,Suburban,Czechia,National automated monitoring network (SIS),49.28096389770508,16.979623794555664,Vyskov
+CZ0HRNK,Background,Suburban,Czechia,National automated monitoring network (SIS),50.17238235473633,16.268238067626953,Rychnov nad Kneznou
+CZ0TKAR,Background,Urban,Czechia,National automated monitoring network (SIS),49.86379623413086,18.55145263671875,Karvina
+CZ0UKRU,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),50.69667053222656,13.847691535949707,Krupka
+CZ0KKVA,Background,Urban,Czechia,National automated monitoring network (SIS),50.2355842590332,12.88524341583252,Karlovy Vary
+CZ0HTRT,Background,Urban,Czechia,National automated monitoring network (SIS),50.565879821777344,15.903926849365234,Trutnov - Tkalcovska
+CZ0LJNM,Background,Urban,Czechia,National automated monitoring network (SIS),50.72736358642578,15.162156105041506,Jablonec-mesto
+CZ0ACHO,Background,Urban,Czechia,National automated monitoring network (SIS),50.03017044067383,14.517450332641602,Praha 4-Chodov
+CZ0TRYC,Background,Urban,Czechia,National automated monitoring network (SIS),49.87166976928711,18.377254486083984,Rychvald
+CZ0ESEZ,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),50.06153869628906,15.85047435760498,Sezemice
+CZ0PSTA,Background,Suburban,Czechia,National automated monitoring network (SIS),49.55256271362305,13.067432403564453,Stankov
+CZ0UVAL,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),50.97500991821289,14.51298999786377,Valdek
+CZ0MPST,Background,Urban,Czechia,National automated monitoring network (SIS),49.467857360839844,17.11472511291504,Prostejov
+CZ0JTRE,Background,Suburban,Czechia,National automated monitoring network (SIS),49.22343826293945,15.865777969360352,Trebic
+CZ0SBRL,Background,Suburban,Czechia,National automated monitoring network (SIS),50.18980026245117,14.660454750061035,Brandys n. Labem
+CZ0MDST,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),49.93196487426758,16.960773468017578,Dolni Studenky
+CZ0AVRS,Traffic,Urban,Czechia,National automated monitoring network (SIS),50.0664291381836,14.446151733398438,Praha 10-Vrsovice
+CZ0BBNE,Background,Suburban,Czechia,National automated monitoring network (SIS),49.25554275512695,16.62049674987793,Brno-Sobesice
+CZ0HPLO,Background,Rural-Regional,Czechia,National automated monitoring network (SIS),50.350563049316406,16.32272720336914,Polom
+CZ0LRAD,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),50.62455368041992,15.078476905822756,Radimovice
+CZ0LCLM,Background,Urban,Czechia,National automated monitoring network (SIS),50.69804382324219,14.537344932556152,Ceska Lipa
+CZ0JKRI,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),49.38359832763672,16.098615646362305,Krizanov
+CZ0EUOR,Background,Rural-Near_city,Czechia,National automated monitoring network (SIS),49.98035430908203,16.422122955322266,Usti n.Orl.
