@@ -1,0 +1,30 @@
+---
+title: "Czech Republic Air Pollutant Concentration from 2013- 2019"
+params:
+tableData: NA
+plotData: NA
+output: word_document
+
+---
+
+---------------
+  
+Data Downloaded
+--------------------------------
+```{r echo=FALSE}
+library(knitr)
+#knitr::kable(params$tableData)
+head(kable(params$tableData))
+
+
+```
+
+---------------------------------------------------------
+Data Plot
+-------
+
+```{r echo=FALSE}
+(params$plotData)
+
+```
+
