@@ -5,6 +5,7 @@ library(dplyr)
 library(lubridate)
 library(magrittr)
 library(leaflet)
+library(rmarkdown)
 
 
 
@@ -177,8 +178,12 @@ ui <- fluidPage(
   
             actionButton(inputId="viz_data", "Visualise Data"),
             
+            downloadButton("download_report", "Download Files"),
+            
+            
 
         ),
+        
 
         # Show a plot of the generated distribution
         mainPanel(
@@ -321,14 +326,60 @@ server <- function(input, output) {
   output$plot_datatable <- DT::renderDataTable(
    
     DT::datatable(df_display(), options = list(pageLength = 10))
-    
+
     
   )
   
   ## plots rendering
   output$plot_result <-renderPlot({
+    print(colnames(df_display()))
+    
     (output_generator())[2]  ## call the 2nd value return from plot functions
+    
   })
+  
+  output$download_report<-downloadHandler(
+    filename = "report.doc",
+    
+    content=function(file){
+      params <- list(tableData=df_display(), plotData=(output_generator())[2])
+      #params <- list(tableData=c(1,2,3))
+      rmarkdown::render(
+        "Report.Rmd", 
+        output_format="word_document",
+        output_file=file,
+        params=params
+        #envir = new.env(parent = globalenv())
+        
+      )
+      
+      
+
+    }
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  #  filename = "ReportTest.csv",
+  #  content=function(file){
+  #    write.csv(df_display(), file)
+  #  }
+    
+   # rmarkdown::render(tempReport, output_file = file,
+   #                    params = params,
+   #                   envir = new.env(parent = globalenv())
+    #)
+    
+    
+  )
   
  
   
