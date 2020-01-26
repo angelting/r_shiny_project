@@ -6,8 +6,7 @@ library(lubridate)
 library(magrittr)
 library(leaflet)
 library(rmarkdown)
-
-
+#theme = shinythemes::shinytheme("cerulean") 
 
 stations_df <- read.csv(file="Data/__Stations.csv", header=TRUE, sep=",")
 filelist <- (list.files(path = "Data"))[-1]   ## -1 to remove __stations.csv from list
@@ -39,9 +38,9 @@ date_df <- as.data.frame(cbind(time_axis_choices, date_format))
 
 calendartime_plot <- function(df,aggregation_type, threshold=0){
   if (aggregation_type == "Daily Averages"){
-    df2 <- df %>% group_by(calendartime = decimal_date(date), station_name) %>% summarise(daily_average=mean(Concentration))
-    x <- df2$calendartime
-    y <- df2$daily_average
+    df2 <- df %>% group_by(time = decimal_date(date), station_name) %>% summarise(y_value=mean(Concentration))
+    x <- df2$time
+    y <- df2$y_value
     x_lab <- "Date"
     y_lab <- "Daily Average"
     title <- "Daily Average by Date"
@@ -49,35 +48,34 @@ calendartime_plot <- function(df,aggregation_type, threshold=0){
   }
   
   else if (aggregation_type == "Raw Hourly Data"){
-    df2 <- df %>% mutate(calendar_time = decimal_date(date))
-    x <- df2$calendar_time
-    y <- df2$Concentration
+    df2 <- df %>% mutate(time = decimal_date(date), y_value=Concentration)%>%select(station_name, time, y_value)
+    x <- df2$time
+    y <- df2$y_value
     x_lab <- "Date"
     y_lab <- "Concentration"
     title <- "Hourly Pollutant Concentration"
     
   }
   else if (aggregation_type == "Daily Maxima"){
-    df2 <- df %>% group_by(calendartime = decimal_date(date), station_name) %>% summarise(daily_max=max(Concentration))
-    x <- df2$calendartime
-    y<-df2$daily_max
+    df2 <- df %>% group_by(time = decimal_date(date), station_name) %>% summarise(y_value=max(Concentration))
+    x <- df2$time
+    y<-df2$y_value
     x_lab <- "Date"
     y_lab <- "Daily Maxima"
     title <- "Daily Maxima by Date"
   } 
   else if (aggregation_type == "Number of Hours Per Year Over Threshold"){
-    df2 <- df %>% mutate(hour = format(date, "%H"), year=format(date,"%Y"))%>% filter(Concentration>threshold) %>% group_by(station_name, year) %>% summarise(number_of_hours = n())
-    x <- df2$year
-    y<-df2$number_of_hours
-    group <- df2$station_name
+    df2 <- df %>% mutate(hour = format(date, "%H"), time=format(date,"%Y"))%>% filter(Concentration>threshold) %>% group_by(station_name, time) %>% summarise(y_value = n())
+    x <- df2$time
+    y<-df2$y_value
     x_lab <- "Year"
     y_lab <- "Hours"
     title <- "Number of Hours per Year when a given threshold is exceeded"
   }
   else if (aggregation_type =="Number of Hours per Day Over Threshold"){
-    df2 <- df %>% mutate(hour = format(date, "%H"), day=ymd(format(date, "%y-%m-%d")))%>% filter(Concentration>threshold) %>% group_by(station_name, day) %>% summarise(number_of_hours = length(hour))
-    x <- df2$day
-    y<-df2$number_of_hours
+    df2 <- df %>% mutate(hour = format(date, "%H"), time=ymd(format(date, "%y-%m-%d")))%>% filter(Concentration>threshold) %>% group_by(station_name, time) %>% summarise(y_value = length(hour))
+    x <- df2$time
+    y<-df2$y_value
     x_lab <- "Date"
     y_lab <- "Hours"
     title <- "Number of Hours per Day when a given threshold is exceeded"
@@ -86,11 +84,11 @@ calendartime_plot <- function(df,aggregation_type, threshold=0){
     df2 <- df %>% mutate(day=ymd(format(date, "%y-%m-%d")))%>% 
       group_by (station_name, day) %>% 
       summarise(daily_concentration = mean(Concentration)) %>%
-      filter(daily_concentration>threshold) %>% group_by(station_name, year = format(day, "%Y")) %>% 
-      group_by(station_name,year) %>% summarise(number_of_day = length(day))
+      filter(daily_concentration>threshold) %>% group_by(station_name, time = format(day, "%Y")) %>% 
+      group_by(station_name,time) %>% summarise(y_value = length(day))
     
-    x <- df2$year
-    y<-df2$number_of_day
+    x <- df2$time
+    y<-df2$y_value
     x_lab <- "Year"
     y_lab <- "Daily average concentration exceeds threshold (Days per year)"
     title <- "Number of days per year for which the daily average concentration exceeds a given threshold"
@@ -101,41 +99,56 @@ calendartime_plot <- function(df,aggregation_type, threshold=0){
     xlab(x_lab)+
     ylab(y_lab)+
     ggtitle(label=title)
+
+  df2 <- df2%>% group_by(time, station_name)%>%
+    arrange(desc(time))%>%
+    mutate(row_index = row_number(), y_value = round(y_value,2))%>% 
+    select(row_index, everything()) %>% 
+    spread(station_name, y_value) 
+
   return (list(df2,plot))
 }
+
+
+
 scatter_plot <- function(date_type, df, aggregation_type, threshold=0, x_label){
   if (aggregation_type == "Daily Averages"){
     
-    df2 <- df %>% group_by(calendartime = format(date, date_type), station_name) %>% summarise(daily_average=mean(Concentration))
+    df2 <- df %>% group_by(calendartime = format(date, date_type), station_name) %>% summarise(y_value=mean(Concentration)) %>%arrange(calendartime)
     x <- df2$calendartime
-    y <- df2$daily_average
+    y <- df2$y_value
     title <- "Daily Average by Date"
   }
   
   else if (aggregation_type == "Raw Hourly Data"){
-    df2 <- df %>% mutate(calendar_time = format(date, date_type))
+    df2 <- df %>% mutate(calendar_time = format(date, date_type), y_value=Concentration) %>% select(station_name, calendar_time, y_value) %>%arrange(desc(calendar_time))
     x <- df2$calendar_time
-    y <- df2$Concentration
+    y <- df2$y_value
     title <- "Hourly Pollutant Concentration"
     
   }
   else if (aggregation_type == "Daily Maxima"){
-    df2 <- df %>% group_by(calendartime = format(date, date_type), station_name) %>% summarise(daily_max=max(Concentration))
+    df2 <- df %>% group_by(calendartime = format(date, date_type), station_name) %>% summarise(y_value=max(Concentration))%>%arrange(desc(calendartime))
     x <- df2$calendartime
-    y<-df2$daily_max
+    y<-df2$y_value
     title <- "Daily Maxima by Date"
   } 
   
   else if (aggregation_type =="Number of Hours per Day Over Threshold"){
-    df2 <- df %>% mutate(hour = format(date, "%H"), day=format(date, date_type))%>% filter(Concentration>threshold) %>% group_by(station_name, day) %>% summarise(number_of_hours = length(hour))
-    x <- df2$day
-    y<-df2$number_of_hours
+    df2 <- df %>% mutate(hour = format(date, "%H"), day=format(date, date_type))%>% filter(Concentration>threshold) %>% group_by(station_name, day) %>% summarise(y_value = length(hour))%>%arrange(desc(day))
+    x <-df2$day
+    y<-df2$y_value
     title <- "Number of Hours per Day when a given threshold is exceeded"
   }
   group<-df2$station_name
   
-  plot <- ggplot(df2, aes(x=x, y=y, group=group, color=group))+geom_point(alpha = 0.35,)+
+  plot <- ggplot(df2, aes(x=x, y=y, group=group, color=group))+geom_point(alpha = 0.5,)+
     xlab(x_label)+ylab(aggregation_type)+ggtitle(label=title)
+  
+  df2 <- df2%>% group_by(station_name)%>%mutate(row_index = row_number())%>% select(row_index, everything()) %>% spread(station_name, y_value)
+
+  
+  
   
   return (list(df2,plot))
 }
@@ -146,8 +159,9 @@ scatter_plot <- function(date_type, df, aggregation_type, threshold=0, x_label){
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
-  #shinythemes::themeSelector(),
+  theme = shinythemes::shinytheme("sandstone"),
   
+
   titlePanel("Air Quality of Czech Republic from 2013 - 2019"),
     
     
@@ -352,37 +366,8 @@ server <- function(input, output) {
         #envir = new.env(parent = globalenv())
         
       )
-      
-      
-
     }
-    
-    
-   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  #  filename = "ReportTest.csv",
-  #  content=function(file){
-  #    write.csv(df_display(), file)
-  #  }
-    
-   # rmarkdown::render(tempReport, output_file = file,
-   #                    params = params,
-   #                   envir = new.env(parent = globalenv())
-    #)
-    
-    
   )
-  
- 
-  
 }
 
 # Run the application 
